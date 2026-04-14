@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Notes - Zhide Lu</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fcfcfc;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1.5rem;
+        }
+        .profile-photo {
+            width: 100px; /* 笔记页的照片可以稍微调小一点 */
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #eee;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+        .header-text { flex-grow: 1; }
+        h1 { font-size: 2rem; margin-top: 0; margin-bottom: 0.2rem; color: #111; }
+        h2 { font-size: 1.5rem; color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 0.3rem; margin-top: 2rem; }
+        a { color: #0366d6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .contact-links a { margin-right: 8px; font-weight: bold; }
+        .contact-links span { color: #ccc; margin-right: 8px; }
+        
+        /* 笔记列表的专属样式 */
+        .note-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .note-list li {
+            margin-bottom: 1.2rem;
+        }
+        .note-date {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-right: 15px;
+            font-style: italic;
+        }
+        .note-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .note-summary {
+            font-size: 0.95rem;
+            color: #555;
+            margin-top: 0.3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="zhidelu.jpg" alt="Zhide Lu's Portrait" class="profile-photo">
+        <div class="header-text">
+            <h1>Zhide Lu (鲁智德)</h1>
+            
+            <div class="contact-links" style="margin-bottom: 10px; font-size: 1.2rem;">
+                <a href="index.html">Home</a><span>|</span>
+                <a href="notes.html">Research Notes</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="notes">
+        <h2>Research Notes</h2>
+        <p>A collection of my notes on quantum error correction, literature reviews, and ongoing thoughts.</p>
+        
+        <ul class="note-list">
+            <li>
+                <span class="note-date">Apr 2026</span>
+                <a href="pinnacle-architecture.html" class="note-title">Resource Estimation and the Pinnacle Architecture</a>
+                <div class="note-summary">Notes and derivations on scaling algorithms like Gidney's for RSA-2048 breaking.</div>
+            </li>
+            <li>
+                <span class="note-date">Mar 2026</span>
+                <a href="bb-codes-review.html" class="note-title">Review of Bivariate Bicycle (BB) Codes</a>
+                <div class="note-summary">Structured knowledge on high-rate qLDPC code constructions and logical operations.</div>
+            </li>
+            <li>
+                <span class="note-date">Mar 2026</span>
+                <a href="decoding-latency.html" class="note-title">Pushing Real-Time Decoding Latency</a>
+                <div class="note-summary">Explorations on hardware implementations to achieve sub-microsecond logical cycle targets.</div>
+            </li>
+        </ul>
+    </section>
+
+</body>
+</html>
