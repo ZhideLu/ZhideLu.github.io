@@ -2,9 +2,7 @@
 layout: default
 ---
 
----
 ### Shor 算法的 order finding 问题 
----
 
 #### 1. Problem definition
 
