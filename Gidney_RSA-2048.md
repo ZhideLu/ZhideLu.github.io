@@ -71,7 +71,7 @@ e^{2\pi i js/r}
 \end{aligned}
 $$
 
-此时，施加IQFT后，第一寄存器（$t$ 个辅助比特）对每个 $\vertu_s\rangle$ 分量编码了接近 $2^t\cdot s/r$ 的位置，测量第一寄存器将以高概率获得相位 $s/r$ 的最佳 $t$ 位二进制近似值。
+此时，施加IQFT后，第一寄存器（$t$ 个辅助比特）对每个 $\vert u_s\rangle$ 分量编码了接近 $2^t\cdot s/r$ 的位置，测量第一寄存器将以高概率获得相位 $s/r$ 的最佳 $t$ 位二进制近似值。
 
 #### 4. Classical processing：continued fractions
 
@@ -131,10 +131,10 @@ $$
 u_j = \left(\frac{L}{p_j}\right) \cdot \text{MultiplicativeInverse}_{p_j}\left(\frac{L}{p_j}\right)
 $$
 
-满足 $u_j \equiv 1 \pmod{p_j}$ 且对其他质数 $u_j \equiv 0 \pmod{p_i}$ $(i \neq j)$。根据中国剩余定理，有 $X \equiv \sum_j r_j u_j \pmod{L}$。因此，目标值 $V$ 可表示为：$$V = \left( \sum_{j=1}^{|P|} r_j u_j \right) \bmod L \bmod N$$。将每个小余数展成二进制形式 $r_j = \sum_{k=0}^{\ell-1} r_{j, k} 2^k$（其中 $\ell$ 为质数位宽），我们得到：
+满足 $u_j \equiv 1 \pmod{p_j}$ 且对其他质数 $u_j \equiv 0 \pmod{p_i}$ $(i \neq j)$。根据中国剩余定理，有 $X \equiv \sum_j r_j u_j \pmod{L}$。因此，目标值 $V$ 可表示为：$$V = \left( \sum_{j=1}^{\vert P\vert} r_j u_j \right) \bmod L \bmod N$$。将每个小余数展成二进制形式 $r_j = \sum_{k=0}^{\ell-1} r_{j, k} 2^k$（其中 $\ell$ 为质数位宽），我们得到：
 
 $$
-V = \left( \sum_{j=1}^{\vert P\vert} \sum_{k=0}^{\ell-1} r_{j, k} \left[ u_j \cdot 2^k \right] \right) \bmod L \bmod N
+V = \left( \sum_{j=1}^{|P|} \sum_{k=0}^{\ell-1} r_{j, k} \left[ u_j \cdot 2^k \right] \right) \bmod L \bmod N
 $$
 
 > **Insight**：这一步极其关键。原本深度极长、极易累积误差的乘法链，被成功展平为了针对 $\vert P\vert$ 个小余数的线性求和问题。
