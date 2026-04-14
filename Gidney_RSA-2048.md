@@ -1,6 +1,5 @@
 ---
 layout: default
-title: Resource Estimation and the Pinnacle Architecture
 ---
 
 ---
