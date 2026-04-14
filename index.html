@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhide Lu - Academic Profile</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            /* 将后备字体改为 serif，因为 Merriweather 是衬线字体 */
+            font-family: 'Merriweather', serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fcfcfc;
+        }
+
+        /* --- 修改开始：Header 布局控制 --- */
+        header {
+            display: flex;
+            align-items: center; /* 垂直居中对齐照片和文字 */
+            gap: 3rem; /* 照片和文字之间的间距 */
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #eee; /* 在整个 Header 下方加线，更有整体感 */
+            padding-bottom: 1.5rem;
+        }
+
+        /* 个人照片样式 */
+        .profile-photo {
+            width: 160px; /* 照片显示宽度 */
+            height: 200px; /* 照片显示高度，设为和宽度一样 */
+            border-radius: 50%; /* 让照片变成圆形 */
+            object-fit: cover; /* 确保照片在圆形区域内正确填充，不拉伸 */
+            border: 3px solid #eee; /* 给照片加一个淡灰色边框 */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 添加淡阴影，让照片更立体 */
+            flex-shrink: 0; /* 防止照片在窄屏下被压缩 */
+        }
+
+        /* 文字内容容器，占据剩余空间 */
+        .header-text {
+            flex-grow: 1;
+        }
+        /* --- 修改结束 --- */
+
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 0; /* 去掉 H1 默认的顶部边距 */
+            margin-bottom: 0.2rem;
+            color: #111;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.3rem;
+            margin-top: 2rem;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+            color: #34495e;
+        }
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .header-info {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-links a {
+            margin-right: 8px; /* 调整链接和竖线之间的间距 */
+            font-weight: bold;
+        }
+        .contact-links span {
+            color: #ccc;
+            margin-right: 8px; /* 调整竖线后面的间距 */
+        }
+
+        .entry {
+            margin-bottom: 1.5rem;
+        }
+        .entry-title {
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+        .entry-details {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+        ul {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        .publication-list li {
+            margin-bottom: 1rem;
+        }
+        .pub-title {
+            font-weight: bold;
+        }
+        .pub-authors {
+            color: #444;
+        }
+        .pub-journal {
+            font-style: italic;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="zhidelu.jpg" alt="Zhide Lu's Portrait" class="profile-photo">
+        
+        <div class="header-text">
+            <h1>Zhide Lu (鲁智德)</h1>
+            <div class="header-info">
+                Research Scientist, Shanghai Qi Zhi Institute<br>
+                Research Direction: Quantum Error Correction, Quantum Artificial Intelligence 
+            </div>
+            <div class="contact-links">
+                <a href="mailto:zhide.lu1997@gmail.com">Email</a><span>|</span> 
+                <a href="https://scholar.google.com/citations?user=0Q_l6w8AAAAJ&hl=zh-CN" target="_blank">Google Scholar</a><span>|</span>
+                <a href="https://github.com/ZhideLu" target="_blank">Github</a><span>|</span>
+                <a href="https://www.linkedin.com/in/zhide-lu-3551b2240/" target="_blank">Linkedin</a>
+            </div>
+        </div>
+        </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am currently a Researcher at the Shanghai Qi Zhi Institute. I received my Ph.D. from the Center for Quantum Information at IIIS, Tsinghua University. My research focuses on quantum error correction, driven by the ultimate goal of realizing practical, large-scale fault-tolerant quantum computation.</p>
+    </section>
+
+    <section id="research-interests">
+        <h2>Research direction</h2>
+        <ul>
+            <li><strong>Low-overhead quantum error correction:</strong> Design and experimental demonstration of quantum low-density parity-check (qLDPC) codes for high-threshold error suppression with reduced physical overhead.</li>
+            <li><strong>Hardware-software co-design:</strong> Co-optimization of code architecture, topological mapping, and long-range coupler layout on superconducting processors to enable practical implementations of advanced QEC schemes.</li>
+            <li><strong>Real-time decoding and feedback:</strong> Development of high-throughput, low-latency decoders and FPGA-based control systems for microsecond-scale closed-loop quantum error correction.</li>
+            <li><strong>Fault-tolerant logical operations:</strong> Resource-efficient implementations of logical gates, lattice surgery, and magic state distillation tailored to high-rate qLDPC codes.</li>
+        </ul>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="entry">
+            <div class="entry-title">
+                <span>Shanghai Qi Zhi Institute</span>
+                <span>2024 &ndash; Present</span>
+            </div>
+            <div class="entry-details">Researcher</div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="entry">
+            <div class="entry-title">
+                <span>Tsinghua University</span>
+                <span>2019 &ndash; 2024</span>
+            </div>
+            <div class="entry-details">Ph.D., Center for Quantum Information, IIIS</div>
+        </div>
+        <div class="entry">
+            <div class="entry-title">
+                <span>University of Science and Technology Beijing</span>
+                <span>2015 &ndash; 2019</span>
+            </div>
+            <div class="entry-details">B.S. in Applied Physics</div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <h2>Selected Publications</h2>
+        <p><em>(* indicates co-first authors, † indicates corresponding authors)</em></p>
+        <ul class="publication-list">
+            <li>
+                <div class="pub-title">Demonstration of low-overhead quantum error correction codes</div>
+                <div class="pub-authors">Ke Wang*, <strong>Zhide Lu*</strong>, Chuanyu Zhang*, Chao Song†, Zhen Wang†, Dong-Ling Deng†, et al.</div>
+                <div class="pub-journal"><a href="https://www.nature.com/articles/s41567-025-03157-4" target="_blank">Nature Physics 22, 308–314 (2026)</a></div>
+            </li>
+            <li>
+                <div class="pub-title">Experimental demonstration of quantum continual learning with superconducting qubits</div>
+                <div class="pub-authors">Chuanyu Zhang*, <strong>Zhide Lu*</strong>, Liangtian Zhao*, Jie Hao†, Dong-Ling Deng†, Chao Song†, et al.</div>
+                <div class="pub-journal"><a href="https://www.nature.com/articles/s41534-025-01174-y" target="_blank">npj Quantum Information 12, 28 (2026)</a></div>
+            </li>
+            <li>
+                <div class="pub-title">Non-Hermitian Fermi-Dirac Distribution in Persistent Current Transport</div>
+                <div class="pub-authors">Pei-Xin Shen, <strong>Zhide Lu</strong>, Jose L. Lado, and Mircea Trif†</div>
+                <div class="pub-journal"><a href="https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.133.086301" target="_blank">Phys. Rev. Lett. 133, 086301 (2024)</a></div>
+            </li>
+            <li>
+                <div class="pub-title">Expressibility-induced concentration of quantum neural tangent kernels</div>
+                <div class="pub-authors">Li-Wei Yu†, Weikang Li, Qi Ye, <strong>Zhide Lu</strong>, Zizhao Han, Dong-Ling Deng†</div>
+                <div class="pub-journal"><a href="https://iopscience.iop.org/article/10.1088/1361-6633/ad82cf/meta" target="_blank">Rep. Prog. Phys. 87, 110501 (2024)</a> | <a href="https://arxiv.org/abs/2311.04965" target="_blank">arXiv:2311.04965 (2023)</a></div>
+            </li>
+            <li>
+                <div class="pub-title">Deep quantum neural networks on a superconducting processor</div>
+                <div class="pub-authors">Xiaoxuan Pan*, <strong>Zhide Lu*</strong>, Dong-Ling Deng†, Luyan Sun†, et al.</div>
+                <div class="pub-journal"><a href="https://www.nature.com/articles/s41467-023-39785-8" target="_blank">Nat. Commun. 14, 4006 (2023)</a></div>
+            </li>
+            <li>
+                <div class="pub-title">Quantum continual learning overcoming catastrophic forgetting</div>
+                <div class="pub-authors">Wenjie Jiang, <strong>Zhide Lu</strong>, and Dong-Ling Deng†</div>
+                <div class="pub-journal"><a href="https://iopscience.iop.org/article/10.1088/0256-307X/39/5/050303" target="_blank">Chinese Phys. Lett. 39 050303 (2022)</a></div>
+            </li>
+            <li>
+                <div class="pub-title">Quantum neural network classifiers: A tutorial</div>
+                <div class="pub-authors">Weikang Li†, <strong>Zhide Lu</strong>, and Dong-Ling Deng†</div>
+                <div class="pub-journal"><a href="https://scipost.org/SciPostPhysLectNotes.61" target="_blank">SciPost Phys. Lect. Notes 61 (2022)</a></div>
+            </li>
+            <li>
+                <div class="pub-title">Markovian Quantum Neuroevolution for Machine Learning</div>
+                <div class="pub-authors"><strong>Zhide Lu*</strong>, Pei-Xin Shen*, and Dong-Ling Deng†</div>
+                <div class="pub-journal"><a href="https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.16.044039" target="_blank">Phys. Rev. Applied 16, 044039 (2021)</a></div>
+            </li>
+            <li>
+                <div class="pub-title">Adversarial learning in quantum artificial intelligence</div>
+                <div class="pub-authors">Pei-Xin Shen, Wenjie Jiang, Weikang Li, <strong>Zhide Lu</strong>, and Dong-Ling Deng†</div>
+                <div class="pub-journal"><a href="https://wulixb.iphy.ac.cn/en/article/doi/10.7498/aps.70.20210789" target="_blank">Acta Phys. Sin., 2021, 70: 140302 (2021)</a></div>
+            </li>
+        </ul>
+    </section>
+
+</body>
+</html>
