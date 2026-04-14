@@ -16,7 +16,7 @@ $$
 U_x |y\rangle := |xy \bmod N\rangle, \quad y \in \{0, 1\}^n
 $$
 
-该算符的本征态 $|u_s\rangle$ 及其对应的本征值可构造如下：
+该算符的本征态 $\vert u_s\rangle$ 及其对应的本征值可构造如下：
 
 $$
 |u_s\rangle
@@ -44,7 +44,7 @@ $$
 
 #### 3. Quantum phase estimation
 
-在实际操作中，制备单个本征态 $|u_s\rangle$ 需要预知 $r$，这构成了逻辑循环。Shor 算法利用了所有本征态的**均匀叠加态**恰好为初态 $|1\rangle$ 的特性：
+在实际操作中，制备单个本征态 $\vert u_s\rangle$ 需要预知 $r$，这构成了逻辑循环。Shor 算法利用了所有本征态的**均匀叠加态**恰好为初态 $\vert 1\rangle$ 的特性：
 
 $$
 \frac{1}{\sqrt r}\sum_{s=0}^{r-1}|u_s\rangle
@@ -71,7 +71,7 @@ e^{2\pi i js/r}
 \end{aligned}
 $$
 
-此时，施加IQFT后，第一寄存器（$t$ 个辅助比特）对每个 $|u_s\rangle$ 分量编码了接近 $2^t\cdot s/r$ 的位置，测量第一寄存器将以高概率获得相位 $s/r$ 的最佳 $t$ 位二进制近似值。
+此时，施加IQFT后，第一寄存器（$t$ 个辅助比特）对每个 $\vertu_s\rangle$ 分量编码了接近 $2^t\cdot s/r$ 的位置，测量第一寄存器将以高概率获得相位 $s/r$ 的最佳 $t$ 位二进制近似值。
 
 #### 4. Classical processing：continued fractions
 
@@ -118,7 +118,7 @@ $$
 
 其中 $e_k$ 是指数寄存器 $e$ 的第 $k$ 位，$M_k = g^{2^k} \pmod{N}$，而 $m = O(\log N)$ 是受控乘法的总次数。
 
-为了避免直接处理大数 $X := \prod_{k=0}^{m-1} M_k^{e_k}$，我们选取一组互质的小质数集合 $P = \{p_1, p_2, \dots, p_{|P|}\}$。为了确保 RNS 系统不溢出，要求这组质数的乘积满足：
+为了避免直接处理大数 $X := \prod_{k=0}^{m-1} M_k^{e_k}$，我们选取一组互质的小质数集合 $P = \{p_1, p_2, \dots, p_{\vert P\vert}\}$。为了确保 RNS 系统不溢出，要求这组质数的乘积满足：
 
 $$
 L = \prod_{i=1}^{|P|} p_i \geq N^m > X.
@@ -147,7 +147,7 @@ $$
 \widetilde{V} = \left( \sum_{j=1}^{|P|} \sum_{k=0}^{\ell-1} r_{j, k} \left( \left[ \left( u_j \cdot 2^k \right) \bmod L \bmod N \right] \gg t \right) \right) \bmod (N \gg t)
 $$
 
-可以进一步简写为：$$\widetilde{V} = \left( \sum_{j=1}^{|P|} \sum_{k=0}^{\ell-1} r_{j, k} C_{j, k} \right) \bmod (N \gg t)$$。其中 $C_{j, k}$ 是完全可以由经典计算机提前算好的常数。至此，量子计算机只需要维护一个宽度为 $f = O(\log \log N)$ 的小型截断累加器即可完成整个模幂过程的近似。
+可以进一步简写为：$$\widetilde{V} = \left( \sum_{j=1}^{\vert P\vert} \sum_{k=0}^{\ell-1} r_{j, k} C_{j, k} \right) \bmod (N \gg t)$$。其中 $C_{j, k}$ 是完全可以由经典计算机提前算好的常数。至此，量子计算机只需要维护一个宽度为 $f = O(\log \log N)$ 的小型截断累加器即可完成整个模幂过程的近似。
 
 #### 4. 硬件映射与高度并行化 (Pinnacle 2026)
 在 Pinnacle 架构的物理实现中，Gidney 算法被进一步从串行扫描转化为极限的硬件级并行：
