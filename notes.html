@@ -10,7 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
     <style>
+        /* 1. 为整个页面增加顶部边距，防止内容被固定的导航栏遮挡 */
         body {
+            padding-top: 70px !important;
             font-family: 'Merriweather', serif;
             line-height: 1.6;
             color: #333;
@@ -19,6 +21,55 @@
             padding: 2rem;
             background-color: #fcfcfc;
         }
+
+        /* 2. 导航栏外层容器：固定在顶部 */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 3. 内部限宽容器 */
+        .nav-container {
+            max-width: 850px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+        /* 4. 链接样式 */
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-right: 30px;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        
+        /* 5. 鼠标悬停效果 */
+        .nav-links a:hover {
+            color: #0366d6;
+        }
+        
+        /* 6. 当前所在页面的高亮效果 (注意：这里在 notes.html 中高亮的是 Research Notes) */
+        .nav-links a.active {
+            color: #0366d6;
+            border-bottom: 2px solid #0366d6;
+        }
+
+        /* Header 样式 */
         header {
             display: flex;
             align-items: center;
@@ -28,7 +79,7 @@
             padding-bottom: 1.5rem;
         }
         .profile-photo {
-            width: 100px; /* 笔记页的照片可以稍微调小一点 */
+            width: 100px; /* 笔记页的照片保持较小尺寸，突出内容 */
             height: 100px;
             border-radius: 50%;
             object-fit: cover;
@@ -41,8 +92,6 @@
         h2 { font-size: 1.5rem; color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 0.3rem; margin-top: 2rem; }
         a { color: #0366d6; text-decoration: none; }
         a:hover { text-decoration: underline; }
-        .contact-links a { margin-right: 8px; font-weight: bold; }
-        .contact-links span { color: #ccc; margin-right: 8px; }
         
         /* 笔记列表的专属样式 */
         .note-list {
@@ -71,16 +120,20 @@
 </head>
 <body>
 
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="notes.html" class="active">Research Notes</a>
+            </div>
+        </div>
+    </nav>
+
     <header>
         <img src="zhidelu.jpg" alt="Zhide Lu's Portrait" class="profile-photo">
         <div class="header-text">
             <h1>Zhide Lu (鲁智德)</h1>
-            
-            <div class="contact-links" style="margin-bottom: 10px; font-size: 1.2rem;">
-                <a href="index.html">Home</a><span>|</span>
-                <a href="notes.html">Research Notes</a>
             </div>
-        </div>
     </header>
 
     <section id="notes">
