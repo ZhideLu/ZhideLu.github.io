@@ -36,7 +36,7 @@
             align-items: center;
         }
 
-        /* 3. 内部限宽容器 */
+        /* 3. 内部限宽容器：与页面的 850px 宽度对齐 */
         .nav-container {
             max-width: 850px;
             width: 100%;
@@ -63,13 +63,13 @@
             color: #0366d6;
         }
         
-        /* 6. 当前所在页面的高亮效果 (注意：这里在 notes.html 中高亮的是 Research Notes) */
+        /* 6. 当前所在页面的高亮效果 (注意：这里高亮的是 Research Notes) */
         .nav-links a.active {
             color: #0366d6;
             border-bottom: 2px solid #0366d6;
         }
 
-        /* Header 样式 */
+        /* --- Header 布局控制 --- */
         header {
             display: flex;
             align-items: center;
@@ -78,8 +78,9 @@
             border-bottom: 2px solid #eee;
             padding-bottom: 1.5rem;
         }
+
         .profile-photo {
-            width: 100px; /* 笔记页的照片保持较小尺寸，突出内容 */
+            width: 100px; /* 笔记页的照片稍微小一点 */
             height: 100px;
             border-radius: 50%;
             object-fit: cover;
@@ -87,12 +88,13 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             flex-shrink: 0;
         }
+
         .header-text { flex-grow: 1; }
         h1 { font-size: 2rem; margin-top: 0; margin-bottom: 0.2rem; color: #111; }
         h2 { font-size: 1.5rem; color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 0.3rem; margin-top: 2rem; }
         a { color: #0366d6; text-decoration: none; }
         a:hover { text-decoration: underline; }
-        
+
         /* 笔记列表的专属样式 */
         .note-list {
             list-style-type: none;
