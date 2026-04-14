@@ -9,10 +9,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <style>
         body {
             font-family: 'Merriweather', serif;
-            line-height: 1.6;
+            line-height: 1.8;
             color: #333;
             max-width: 850px;
             margin: 0 auto;
@@ -38,23 +49,22 @@
         .contact-links a { margin-right: 15px; font-weight: bold; font-size: 1.1rem; }
         
         /* Markdown 正文样式优化 */
-        .markdown-body h1 { border-bottom: 2px solid #eee; padding-bottom: 0.3rem; margin-top: 2rem; }
-        .markdown-body h2 { color: #2c3e50; margin-top: 1.5rem; }
-        .markdown-body pre, .markdown-body code { background-color: #f6f8fa; border-radius: 3px; padding: 0.2rem 0.4rem; font-family: monospace; font-size: 0.9em; }
-        .markdown-body pre { padding: 16px; overflow: auto; }
-        .markdown-body pre code { padding: 0; }
-        .markdown-body blockquote { border-left: 4px solid #dfe2e5; padding: 0 1em; color: #6a737d; }
+        .markdown-body { font-size: 1.05rem; }
+        .markdown-body h1, .markdown-body h2 { border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; margin-top: 24px; margin-bottom: 16px; font-weight: 600; line-height: 1.25; }
+        .markdown-body p { margin-top: 0; margin-bottom: 16px; }
+        /* 避免长公式撑破页面 */
+        .MathJax_Display { overflow-x: auto; overflow-y: hidden; }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="{{ site.baseurl }}/zhidelu.jpg" alt="Zhide Lu" class="profile-photo">
+        <img src="/zhidelu.jpg" alt="Zhide Lu" class="profile-photo" onerror="this.style.display='none'">
         <div class="header-text">
             <h1 class="site-title">Zhide Lu (鲁智德)</h1>
             <div class="contact-links">
-                <a href="{{ site.baseurl }}/index.html">Home</a> 
-                <a href="{{ site.baseurl }}/notes.html">Research Notes</a>
+                <a href="/index.html">Home</a> 
+                <a href="/notes.html">Research Notes</a>
             </div>
         </div>
     </header>
