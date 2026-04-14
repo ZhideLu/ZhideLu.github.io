@@ -134,7 +134,7 @@ $$
 满足 $u_j \equiv 1 \pmod{p_j}$ 且对其他质数 $u_j \equiv 0 \pmod{p_i}$ $(i \neq j)$。根据中国剩余定理，有 $X \equiv \sum_j r_j u_j \pmod{L}$。因此，目标值 $V$ 可表示为：$$V = \left( \sum_{j=1}^{|P|} r_j u_j \right) \bmod L \bmod N$$。将每个小余数展成二进制形式 $r_j = \sum_{k=0}^{\ell-1} r_{j, k} 2^k$（其中 $\ell$ 为质数位宽），我们得到：
 
 $$
-V = \left( \sum_{j=1}^{|P|} \sum_{k=0}^{\ell-1} r_{j, k} \left[ u_j \cdot 2^k \right] \right) \bmod L \bmod N
+V = \left( \sum_{j=1}^{\vert P\vert} \sum_{k=0}^{\ell-1} r_{j, k} \left[ u_j \cdot 2^k \right] \right) \bmod L \bmod N
 $$
 
 > **Insight**：这一步极其关键。原本深度极长、极易累积误差的乘法链，被成功展平为了针对 $\vert P\vert$ 个小余数的线性求和问题。
