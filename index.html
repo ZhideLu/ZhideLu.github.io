@@ -10,8 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
     <style>
+        /* 1. 为整个页面增加顶部边距，防止内容被固定的导航栏遮挡 */
         body {
-            /* 将后备字体改为 serif，因为 Merriweather 是衬线字体 */
+            padding-top: 70px !important;
             font-family: 'Merriweather', serif;
             line-height: 1.6;
             color: #333;
@@ -21,36 +22,80 @@
             background-color: #fcfcfc;
         }
 
-        /* --- 修改开始：Header 布局控制 --- */
+        /* 2. 导航栏外层容器：固定在顶部 (这是你之前漏掉的最关键的代码) */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 3. 内部限宽容器：与你页面的 850px 宽度对齐 */
+        .nav-container {
+            max-width: 850px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+        /* 4. 链接样式 */
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-right: 30px;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        
+        /* 5. 鼠标悬停效果 */
+        .nav-links a:hover {
+            color: #0366d6;
+        }
+        
+        /* 6. 当前所在页面的高亮效果 (Active State) */
+        .nav-links a.active {
+            color: #0366d6;
+            border-bottom: 2px solid #0366d6;
+        }
+
+        /* --- Header 布局控制 --- */
         header {
             display: flex;
-            align-items: center; /* 垂直居中对齐照片和文字 */
-            gap: 3rem; /* 照片和文字之间的间距 */
+            align-items: center;
+            gap: 3rem;
             margin-bottom: 2rem;
-            border-bottom: 2px solid #eee; /* 在整个 Header 下方加线，更有整体感 */
+            border-bottom: 2px solid #eee;
             padding-bottom: 1.5rem;
         }
 
-        /* 个人照片样式 */
         .profile-photo {
-            width: 160px; /* 照片显示宽度 */
-            height: 200px; /* 照片显示高度，设为和宽度一样 */
-            border-radius: 50%; /* 让照片变成圆形 */
-            object-fit: cover; /* 确保照片在圆形区域内正确填充，不拉伸 */
-            border: 3px solid #eee; /* 给照片加一个淡灰色边框 */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 添加淡阴影，让照片更立体 */
-            flex-shrink: 0; /* 防止照片在窄屏下被压缩 */
+            width: 160px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #eee;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            flex-shrink: 0;
         }
 
-        /* 文字内容容器，占据剩余空间 */
         .header-text {
             flex-grow: 1;
         }
-        /* --- 修改结束 --- */
 
         h1 {
             font-size: 2.5rem;
-            margin-top: 0; /* 去掉 H1 默认的顶部边距 */
+            margin-top: 0;
             margin-bottom: 0.2rem;
             color: #111;
         }
@@ -78,12 +123,12 @@
             margin-bottom: 1.5rem;
         }
         .contact-links a {
-            margin-right: 8px; /* 调整链接和竖线之间的间距 */
+            margin-right: 8px;
             font-weight: bold;
         }
         .contact-links span {
             color: #ccc;
-            margin-right: 8px; /* 调整竖线后面的间距 */
+            margin-right: 8px;
         }
 
         .entry {
@@ -121,7 +166,16 @@
     </style>
 </head>
 <body>
-
+    
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="notes.html">Research Notes</a>
+            </div>
+        </div>
+    </nav>
+    
     <header>
         <img src="zhidelu.jpg" alt="Zhide Lu's Portrait" class="profile-photo">
         
@@ -131,11 +185,6 @@
                 Research Scientist, Shanghai Qi Zhi Institute<br>
                 Research Direction: Quantum Error Correction, Quantum Artificial Intelligence 
             </div>
-
-            <div class="contact-links" style="margin-bottom: 10px; font-size: 1.2rem;">
-                <a href="index.html">Home</a><span>|</span>
-                <a href="notes.html">Research Notes</a>
-            </div>  
             
             <div class="contact-links">
                 <a href="mailto:zhide.lu1997@gmail.com">Email</a><span>|</span> 
@@ -144,7 +193,7 @@
                 <a href="https://www.linkedin.com/in/zhide-lu-3551b2240/" target="_blank">Linkedin</a>
             </div>
         </div>
-        </header>
+    </header>
 
     <section id="about">
         <h2>About Me</h2>
