@@ -36,7 +36,7 @@
             align-items: center;
         }
 
-        /* 3. 内部限宽容器：与页面的 850px 宽度对齐 */
+        /* 3. 内部限宽容器：与页面的宽度对齐 */
         .nav-container {
             max-width: 1000px;
             width: 100%;
@@ -73,14 +73,14 @@
         header {
             display: flex;
             align-items: center;
-            gap: 3rem;
+            gap: 3rem; /* 间距改回和主页一致的 3rem */
             margin-bottom: 2rem;
             border-bottom: 2px solid #eee;
             padding-bottom: 1.5rem;
         }
 
         .profile-photo {
-            width: 160px; /* 笔记页的照片稍微小一点 */
+            width: 160px; /* 尺寸改回和主页一致 */
             height: 200px;
             border-radius: 50%;
             object-fit: cover;
@@ -90,10 +90,24 @@
         }
 
         .header-text { flex-grow: 1; }
-        h1 { font-size: 2rem; margin-top: 0; margin-bottom: 0.2rem; color: #111; }
+        h1 { font-size: 2.5rem; margin-top: 0; margin-bottom: 0.2rem; color: #111; }
         h2 { font-size: 1.5rem; color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 0.3rem; margin-top: 2rem; }
         a { color: #0366d6; text-decoration: none; }
         a:hover { text-decoration: underline; }
+
+        /* 补回个人信息的排版样式 */
+        .header-info {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-links a {
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        .contact-links span {
+            color: #ccc;
+            margin-right: 8px;
+        }
 
         /* 笔记列表的专属样式 */
         .note-list {
@@ -135,7 +149,18 @@
         <img src="zhidelu.jpg" alt="Zhide Lu's Portrait" class="profile-photo">
         <div class="header-text">
             <h1>Zhide Lu (鲁智德)</h1>
+            <div class="header-info">
+                Research Scientist, Shanghai Qi Zhi Institute<br>
+                Research Direction: Quantum Error Correction, Quantum Artificial Intelligence 
             </div>
+            
+            <div class="contact-links">
+                <a href="mailto:zhide.lu1997@gmail.com">Email</a><span>|</span> 
+                <a href="https://scholar.google.com/citations?user=0Q_l6w8AAAAJ&hl=zh-CN" target="_blank">Google Scholar</a><span>|</span>
+                <a href="https://github.com/ZhideLu" target="_blank">Github</a><span>|</span>
+                <a href="https://www.linkedin.com/in/zhide-lu-3551b2240/" target="_blank">Linkedin</a>
+            </div>
+        </div>
     </header>
 
     <section id="notes">
@@ -176,8 +201,7 @@
             <li>
                 <span class="note-date"> 2026</span>
                 <a href="single-shot_QEC.html" class="note-title">Single-shot quantum error corection</a>
-                <!-- <div class="note-summary">Explorations on hardware implementations to achieve sub-microsecond logical cycle targets.</div> -->
-            </li>
+                </li>
             
             <li>
                 <span class="note-date"> 2026</span>
